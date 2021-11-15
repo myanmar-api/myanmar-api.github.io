@@ -13,27 +13,102 @@
         />
         <link rel="stylesheet" href="style.css" />
     </head>
-    <body class="">
-        <div class="container mt-5">
-            <div class="row">
-                <div class="col-6">
-                    <div class="form-group mb-3">
-                        <label for="stateSelect" class="form-label"
-                            >တိုင်း / ပြည်နယ်</label
-                        >
-                        <select class="form-select" id="stateSelect">
-                            <option selected>
-                                ပြည် / တိုင်း ကိုရွေးချယ်ပေးပါ။
-                            </option>
-                        </select>
+    <body class="bg-dark">
+        <div class="top-container py-5">
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-md-6 mb-5">
+                        <h4 class="text-center text-white top-card">
+                            မြန်မာနိုင်ငံရှိ မြို့ပေါင်း အားလုံးအတွက်
+                            <span class="primary-text fw-bolder fs-1">API</span>
+                        </h4>
+                        <p class="text-white text-start mt-5">
+                            မြို့ပေါင်း (၅၀၀) ကျော် ဒေတာများဖြင့်
+                            မြန်မာဘာသာဖြင့် Data များရရှိပါမည်။
+                        </p>
+                        <p class="text-white text-start">
+                            အသုံးပြုရန်အတွက် API Key မလိုအပ်ပဲ လွယ်ကူစွာ
+                            အသုံးပြုနိုင်ပါသည်။
+                        </p>
+                        <p class="text-white text-start">
+                            ဒေတာများကို Google Map မှ ယူထားခြင်းဖြစ်သည်။
+                        </p>
                     </div>
-                    <div class="form-group">
-                        <label for="citySelect" class="form-label"
-                            >မြို့နယ်</label
-                        >
-                        <select class="form-select" id="citySelect">
-                            <option selected>မြို့နယ် ရွေးချယ်ပေးပါ။</option>
-                        </select>
+                    <div class="col-md-6">
+                        <div class="card demo-card bg-dark">
+                            <div class="card-body px-3 py-5">
+                                <div class="form-group mb-3">
+                                    <label
+                                        for="stateSelect"
+                                        class="form-label text-white"
+                                        >တိုင်း / ပြည်နယ်</label
+                                    >
+                                    <select
+                                        class="form-select"
+                                        id="stateSelect"
+                                    >
+                                        <option selected>
+                                            တိုင်း / ပြည်နယ် ကိုရွေးချယ်ပေးပါ။
+                                        </option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label
+                                        for="citySelect"
+                                        class="form-label text-white"
+                                        >မြို့နယ်</label
+                                    >
+                                    <select class="form-select" id="citySelect">
+                                        <option selected>
+                                            မြို့နယ် ရွေးချယ်ပေးပါ။
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col">
+                        <div class="text-white">
+                            <div>
+                                <p>Root URL :</p>
+                                <div class="alert alert-light mt-3">
+                                    <code>
+                                        <span>
+                                            https://script.google.com/macros/s/AKfycbzfBfs4p67GNOts_PIR48JrV1LKlB6pE6pn-R1aR1-xzJ_F6-a-oIv5_8FmQh1KTrMTyw/exec
+                                        </span>
+                                    </code>
+                                </div>
+                                <div class="mb-5">
+                                    <p>
+                                        * The <code>callback</code> paramater is
+                                        require in every requests. If not you
+                                        will get <b>CORS Issue</b>.
+                                    </p>
+
+                                    <p>
+                                        Add this in URL :
+                                        <code>?callback=?</code>
+                                    </p>
+                                </div>
+                                <p>Get States and Divisions :</p>
+
+                                <p>
+                                    တိုင်း / ပြည်နယ် များကို ရဖို့ရန်အတွက်
+                                    အောက်တွင် AJAX ဖြင့် နမူနာ ပြထားပါသည်။
+                                </p>
+                                <script src="https://gist.github.com/justsaimain/40a8f41d541370c8d41daa2f10987344.js"></script>
+                                <p>Get Cities of the State/Division :</p>
+                                <p>
+                                    တိုင်း / ပြည်နယ် တစ်ခုခု၏ မြို့နယ်များကို
+                                    ရဖို့ရန်အတွက် အောက်တွင် AJAX ဖြင့် နမူနာ
+                                    ပြထားပါသည်။ <code>/get/{slug}</code> ဖြင့်
+                                    Request ပို့ရပါမည်။
+                                </p>
+                                <script src="https://gist.github.com/justsaimain/d9c2816c544427f7fad446482d433d0f.js"></script>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -48,6 +123,12 @@
             src="https://code.jquery.com/jquery-3.6.0.min.js"
             integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
             crossorigin="anonymous"
+        ></script>
+        <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.24.0/axios.min.js"
+            integrity="sha512-u9akINsQsAkG9xjc1cnGF4zw5TFDwkxuc9vUp5dltDWYCSmyd0meygbvgXrlc/z7/o4a19Fb5V0OUE58J7dcyw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
         ></script>
         <script src="app.js"></script>
     </body>

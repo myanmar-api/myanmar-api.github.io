@@ -1,0 +1,15 @@
+.primary-text {
+    color: #00897b;
+}
+
+.demo-card {
+    border: 1px solid rgb(99, 99, 99);
+    border-radius: 20px !important;
+}
+
+.bottom-container {
+    position: fixed;
+    top: 500px;
+    left: 0;
+    width: 100%;
+}
